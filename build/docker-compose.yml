@@ -1,0 +1,48 @@
+version: "3.5"
+
+services:
+  #######################################################
+  # Open DAM Worker
+  #######################################################
+  open_dam_worker:
+    build:
+      context: .
+      dockerfile: ./build/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - rabbitmq
+    environment:
+      BROKER: amqp://rabbitmq:5672/
+    networks:
+      - data
+
+  #######################################################
+  # Open DAM API
+  #######################################################
+  open_dam_api:
+    image: docker.pkg.github.com/open-dam/open-dam-api/open-dam-api:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    networks:
+      - data
+
+  #######################################################
+  # Broker
+  #######################################################
+  rabbitmq:
+    image: rabbitmq
+    restart: unless-stopped
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - data
+
+#######################################################
+# Networking
+#######################################################
+networks:
+  data:
+    name: opendam
+    driver: bridge
