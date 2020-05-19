@@ -1,1 +1,1 @@
-# open-dam-processor
+# Open DAM Worker
