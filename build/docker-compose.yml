@@ -13,19 +13,23 @@ services:
       - rabbitmq
     environment:
       BROKER: amqp://rabbitmq:5672/
+      RESULT_BACKEND: "amqp://rabbitmq:5672/"
+      ENVIRONMENT: local
+    volumes:
+      - /Users/jessemichael/Downloads:/containerfiles
     networks:
       - data
 
   #######################################################
   # Open DAM API
   #######################################################
-  open_dam_api:
-    image: docker.pkg.github.com/open-dam/open-dam-api/open-dam-api:latest
-    restart: unless-stopped
-    ports:
-      - "8080:8080"
-    networks:
-      - data
+  # open_dam_api:
+  #   image: docker.pkg.github.com/open-dam/open-dam-api/open-dam-api:latest
+  #   restart: unless-stopped
+  #   ports:
+  #     - "8080:8080"
+  #   networks:
+  #     - data
 
   #######################################################
   # Broker

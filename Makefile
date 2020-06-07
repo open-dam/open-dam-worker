@@ -14,4 +14,4 @@ test-coverage:
 	go test -coverpkg ./internal/... -coverprofile coverage/coverage.out ./... && go tool cover -html=coverage/coverage.out
 
 run:
-	docker run open-dam-worker
+	docker-compose --file ./build/docker-compose.yml --project-directory . up --build

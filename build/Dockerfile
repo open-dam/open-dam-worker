@@ -7,15 +7,16 @@ RUN apk update && apk add --no-cache git ca-certificates && update-ca-certificat
 
 # Copy project files
 WORKDIR /go/src
-COPY . .
+COPY go.mod .
+COPY go.sum .
 
 # Fetch dependencies
 RUN go mod download
-RUN go mod verify
+COPY . .
 
 # Build project
 ENV CGO_ENABLED=0
-RUN go build -a -installsuffix cgo -o open-dam-worker ./cmd/open-dam-worker
+RUN go build -o open-dam-worker ./cmd/open-dam-worker
 
 FROM scratch AS runtime
 
