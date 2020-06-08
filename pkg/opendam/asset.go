@@ -11,7 +11,7 @@ type Asset struct {
 
 	Version Version `json:"version"`
 
-	File File `json:"file"`
+	File *File `json:"file,omitempty"`
 
 	// additional assets/files associated with the asset
 	Formats []Asset `json:"formats,omitempty"`
@@ -20,11 +20,11 @@ type Asset struct {
 	Tags []string `json:"tags,omitempty"`
 
 	// Any user supplied metadata for the asset
-	Metadata map[string]map[string]interface{} `json:"metadata,omitempty"`
+	Metadata map[string]interface{} `json:"metadata,omitempty"`
 }
 
 type Assets struct {
-	Assets []Asset `json:"assets,omitempty"`
+	Assets []Asset `json:"assets"`
 }
 
 // File - The file associated with an asset or format
@@ -56,10 +56,10 @@ type File struct {
 type Version struct {
 
 	// The version number
-	Number float32 `json:"number"`
+	Number int `json:"number"`
 
 	// A point in time represented as milliseconds from the Epoch (UTC)
-	Timestamp float32 `json:"timestamp"`
+	Timestamp int64 `json:"timestamp"`
 
 	JobID string `json:"job_id"`
 }
