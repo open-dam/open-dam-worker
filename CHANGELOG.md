@@ -1,3 +1,9 @@
+## [1.0.3](https://github.com/open-dam/open-dam-worker/compare/v1.0.2...v1.0.3) (2020-06-08)
+
+### Bug Fixes
+
+- add collection factory ([9c8e510](https://github.com/open-dam/open-dam-worker/commit/9c8e5104ce8839ebbff505d6d67de9a0027f1b0c))
+
 ## [1.0.2](https://github.com/open-dam/open-dam-worker/compare/v1.0.1...v1.0.2) (2020-06-07)
 
 ### Bug Fixes
