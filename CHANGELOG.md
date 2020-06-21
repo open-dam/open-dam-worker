@@ -1,3 +1,9 @@
+# [1.1.0](https://github.com/open-dam/open-dam-worker/compare/v1.0.3...v1.1.0) (2020-06-21)
+
+### Features
+
+- configure workers, create tasks ([1940cbd](https://github.com/open-dam/open-dam-worker/commit/1940cbd9ed411fd5a8807f41101479a0e717e165))
+
 ## [1.0.3](https://github.com/open-dam/open-dam-worker/compare/v1.0.2...v1.0.3) (2020-06-08)
 
 ### Bug Fixes
