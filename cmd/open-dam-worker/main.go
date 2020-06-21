@@ -4,7 +4,6 @@ import (
 	"time"
 
 	"github.com/RichardKnop/machinery/v1"
-	"github.com/RichardKnop/machinery/v1/config"
 	"github.com/RichardKnop/machinery/v1/log"
 	"github.com/open-dam/open-dam-worker/pkg/opendam"
 	"github.com/open-dam/open-dam-worker/pkg/tasks"
@@ -14,18 +13,18 @@ func main() {
 	logger := opendam.Logger()
 	log.Set(logger)
 
-	cnf, err := config.NewFromEnvironment(true)
+	cfg, err := opendam.LoadConfig()
 	if err != nil {
-		logger.WithError(err).Fatal("failed to build machinery config from environment")
+		logger.WithError(err).Fatal("failed to load config from environment")
 	}
 
-	logger.Infof("configgy: %+v\n", cnf)
+	logger.Infof("configgy: %+v\n", cfg)
 
-	server, err := machinery.NewServer(cnf)
+	server, err := machinery.NewServer(cfg.Machinery)
 	if err != nil {
 		logger.WithError(err).Fatal("failed to start machinery server")
 	}
-	tasker, err := tasks.NewTasker(server, logger)
+	tasker, err := tasks.NewTasker(cfg, server, logger)
 	if err != nil {
 		logger.WithError(err).Fatal("failed to start tasker")
 	}

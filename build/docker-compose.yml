@@ -14,22 +14,31 @@ services:
     environment:
       BROKER: amqp://rabbitmq:5672/
       RESULT_BACKEND: "amqp://rabbitmq:5672/"
+      OPENDAM_HOST: open_dam_api:8080
+      BLOG_CONNECTION: file:///dir
       ENVIRONMENT: local
     volumes:
-      - /Users/jessemichael/Downloads:/containerfiles
+      - /Users/jessemichael/Downloads:/dir
     networks:
       - data
 
   #######################################################
   # Open DAM API
   #######################################################
-  # open_dam_api:
-  #   image: docker.pkg.github.com/open-dam/open-dam-api/open-dam-api:latest
-  #   restart: unless-stopped
-  #   ports:
-  #     - "8080:8080"
-  #   networks:
-  #     - data
+  open_dam_api:
+    image: docker.pkg.github.com/open-dam/open-dam-api/open-dam-api:v1.2.4
+    restart: unless-stopped
+    environment:
+      BROKER: amqp://rabbitmq:5672/
+      RESULT_BACKEND: "amqp://rabbitmq:5672/"
+      CONNECTION: mem://collection/assetid
+      BLOG_CONNECTION: file:///dir
+      ENVIRONMENT: local
+      LOG_LEVEL: debug
+    ports:
+      - "8080:8080"
+    networks:
+      - data
 
   #######################################################
   # Broker
