@@ -1,3 +1,18 @@
+## [1.1.1](https://github.com/open-dam/open-dam-worker/compare/v1.1.0...v1.1.1) (2020-06-26)
+
+### Bug Fixes
+
+- add image creation ([4dc1ce0](https://github.com/open-dam/open-dam-worker/commit/4dc1ce0acb4e820326c9b3ccfda85a2237b3b6f7))
+- update open api usage ([045441a](https://github.com/open-dam/open-dam-worker/commit/045441a1f8a4489d5547e484687dc7047875a13a))
+
+### Continuous Integration
+
+- add super linter ([ab74429](https://github.com/open-dam/open-dam-worker/commit/ab7442924fe26efb13f7892efd3410c95eedde34))
+
+### Documentation
+
+- add license ([9f9e70a](https://github.com/open-dam/open-dam-worker/commit/9f9e70a8193ef4fa3def1737431c375615812b6c))
+
 # [1.1.0](https://github.com/open-dam/open-dam-worker/compare/v1.0.3...v1.1.0) (2020-06-21)
 
 ### Features
