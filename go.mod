@@ -8,6 +8,7 @@ require (
 	github.com/barasher/go-exiftool v1.1.1
 	github.com/google/uuid v1.1.1
 	github.com/kelseyhightower/envconfig v1.4.0
+	github.com/mdlayher/waveform v0.0.0-20200324155202-fae081fc659d
 	github.com/muesli/smartcrop v0.3.0
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 // indirect
 	github.com/open-dam/open-dam-go-client v1.0.4
