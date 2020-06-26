@@ -1,3 +1,13 @@
+## [1.1.2](https://github.com/open-dam/open-dam-worker/compare/v1.1.1...v1.1.2) (2020-06-26)
+
+### Bug Fixes
+
+- add soundwave task ([fe8eab1](https://github.com/open-dam/open-dam-worker/commit/fe8eab1a4fcb470b933cba2752af4515ff61c82d))
+
+### Other
+
+- Merge branch 'master' of github.com:open-dam/open-dam-worker ([866a8e3](https://github.com/open-dam/open-dam-worker/commit/866a8e35db38c7133f52aaf534349b54befda543))
+
 ## [1.1.1](https://github.com/open-dam/open-dam-worker/compare/v1.1.0...v1.1.1) (2020-06-26)
 
 ### Bug Fixes
