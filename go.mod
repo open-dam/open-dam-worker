@@ -6,8 +6,11 @@ require (
 	cloud.google.com/go/firestore v1.2.0 // indirect
 	github.com/RichardKnop/machinery v1.8.1
 	github.com/barasher/go-exiftool v1.1.1
+	github.com/google/uuid v1.1.1
 	github.com/kelseyhightower/envconfig v1.4.0
-	github.com/open-dam/open-dam-go-client v1.0.3
+	github.com/muesli/smartcrop v0.3.0
+	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 // indirect
+	github.com/open-dam/open-dam-go-client v1.0.4
 	github.com/sirupsen/logrus v1.4.2
 	gocloud.dev v0.19.0
 	gocloud.dev/docstore/mongodocstore v0.19.0
