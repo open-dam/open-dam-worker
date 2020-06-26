@@ -31,7 +31,8 @@ func NewTasker(cfg opendam.Config, server *machinery.Server, log *logrus.Entry) 
 	}
 
 	client := opendamclient.NewAPIClient(&opendamclient.Configuration{
-		Host: cfg.OpenDAMHost,
+		Host:   cfg.OpenDAMHost,
+		Scheme: "http",
 	})
 
 	exif, err := exiftool.NewExiftool()

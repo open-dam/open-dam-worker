@@ -24,9 +24,7 @@ func (t Tasker) Extract(url, assetID string) error {
 	}
 
 	job, resp, err := t.api.PutAsset(context.Background(), assetID, opendamclient.AssetUpdate{
-		Metadata: map[string]map[string]interface{}{
-			"exiftool": m[0].Fields,
-		},
+		Metadata: m[0].Fields,
 	})
 	if err != nil {
 		return err
